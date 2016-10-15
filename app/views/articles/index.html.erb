@@ -1,22 +1,30 @@
+<div class="container">
 <h1>Lista artykułów</h1>
 <p>
 	<%= link_to "Dodaj nowy artykuł", new_article_path %>
 </p>
 
-<table>
+<table class="table table-hover">
+	<thead>
 	<tr>
+		<th>#</th>
 		<th>Tytul</th>
 		<th>Opis</th>
+		<th></th>
+		<th></th>
 		
 	</tr>
-	
+	</thead>
+	<tbody>
+		<% a = 0 %>
 		<% @articles.each do |t| %>
 			<tr>
+				<td><%= a = a+1 %></td>
 				<td><%= t.title %></td>
 				<td><%= t.description %></td>
 				<td><%= link_to 'pokaż', article_path(t)%></td>
 				<td><%= link_to 'edytuj', edit_article_path(t)%></td>
 			</tr>
 		<% end %>
-	
+	</tbody>
 </table>

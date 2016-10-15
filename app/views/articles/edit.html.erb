@@ -9,7 +9,7 @@
 </ul>
 <% end %>
 
-
+<div class="container">
 <%= form_for @article do |t|%>
 	<p>
 		<%= t.label :title %><br />
@@ -26,3 +26,4 @@
 
 <% end %>
 <%= link_to "pokażlistę artykułów", articles_path %>
+</div>
