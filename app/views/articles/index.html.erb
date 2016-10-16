@@ -1,4 +1,4 @@
-<div class="container">
+
 <h1>Lista artykułów</h1>
 <p>
 	<%= link_to "Dodaj nowy artykuł", new_article_path %>
@@ -12,6 +12,7 @@
 		<th>Opis</th>
 		<th></th>
 		<th></th>
+		<th></th>
 		
 	</tr>
 	</thead>
@@ -19,11 +20,12 @@
 		<% a = 0 %>
 		<% @articles.each do |t| %>
 			<tr>
-				<td><%= a = a+1 %></td>
+				<td><% a = a+1 %><%= t.id %></td>
 				<td><%= t.title %></td>
 				<td><%= t.description %></td>
 				<td><%= link_to 'pokaż', article_path(t)%></td>
 				<td><%= link_to 'edytuj', edit_article_path(t)%></td>
+				<td><%= link_to 'usuń', article_path(t), method: :delete, data: {confirm: "Czy na pewno usunąć artykuł?"} %></td>
 			</tr>
 		<% end %>
 	</tbody>

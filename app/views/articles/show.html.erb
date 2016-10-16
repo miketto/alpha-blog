@@ -1,5 +1,5 @@
-<div class="container">
-<h1>Wywietlam wybrany artuku</h1>
+
+<h1>Wyświetlam wybrany artukuł</h1>
 
 <p>
 	Tytuł: <%= @article.title%>
@@ -9,5 +9,6 @@
 	Opis: <%= @article.description%>
 </p>
 <%= link_to 'edytuj', edit_article_path(@article)%> |
-<%= link_to "pokażlistę artykułów", articles_path %>
-</div>
+<%= link_to 'usuń', article_path(@article), method: :delete, data: {confirm: "Czy na pewno usunąć artykuł?"} %> | 
+<%= link_to "pokaż listę artykułów", articles_path%>
+
